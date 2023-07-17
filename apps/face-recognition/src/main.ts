@@ -1,11 +1,13 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import VConsole from "vconsole";
+import { createApp } from 'vue'
+import App from './App.vue'
+import VConsole from 'vconsole'
 
-import "./assets/main.css";
+import './assets/main.css'
 
-import "virtual:uno.css";
+import 'virtual:uno.css'
 
-new VConsole();
+console.log(import.meta.env)
 
-createApp(App).mount("#app");
+if (import.meta.env.DEV) new VConsole()
+
+createApp(App).mount('#app')

@@ -1,7 +1,7 @@
 // uno.config.ts
-import { defineConfig, presetUno } from "unocss";
+import { defineConfig, presetIcons, presetUno } from 'unocss'
 
 export default defineConfig({
   // ...UnoCSS options
-  presets: [presetUno()],
-});
+  presets: [presetUno(), presetIcons({ autoInstall: true })]
+})

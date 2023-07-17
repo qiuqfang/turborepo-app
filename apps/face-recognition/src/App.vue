@@ -35,30 +35,38 @@ onMounted(async () => {
     } else {
       isFace.value = true;
       console.log(stream.getTracks());
-      const tracks = stream.getTracks();
-      for (const track of tracks) {
-        track.stop();
-      }
+      // const tracks = stream.getTracks();
+      // for (const track of tracks) {
+      //   track.stop();
+      // }
     }
   };
   videoEl.onloadedmetadata = onPlay;
 });
 
 const isFace = ref(false);
+
+const handleToggle = () => {
+  const htmlEl = document.documentElement
+
+  htmlEl.classList.toggle("dark");
+  if (htmlEl.classList.value.includes("dark")) {
+    localStorage.theme = "dark";
+  } else {
+    localStorage.theme = "light";
+  }
+};
 </script>
 
 <template>
-  <div class="face_wrapper dark:bg-black h-full">
-    <video id="face_video" src="" autoplay hidden></video>
-    <div class="flex justify-center items-center dark:text-cyan-50">
+  <div class="face_wrapper dark:bg-black h-full flex justify-start items-center flex-col text-black dark:text-cyan-50">
+    <video id="face_video" class=" w-40 h-40 rounded-[50%] object-fill mt-4 rotate-y-180" src="" autoplay></video>
+    <div class=" dark:text-cyan-50 mt-4">
       <h1>{{ isFace ? "人类" : "特殊物种" }}</h1>
     </div>
+
+    <i class="i-carbon-sun dark:i-carbon-moon" @click="handleToggle"></i>
   </div>
 </template>
 
-<style scoped>
-#face_video {
-  width: 100vw;
-  height: 100vh;
-}
-</style>
+<style scoped></style>

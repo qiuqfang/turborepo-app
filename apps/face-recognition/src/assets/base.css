@@ -1,0 +1,8 @@
+:root {
+  --base-color: #000;
+  --base-background-color: #fff;
+}
+.dark:root {
+  --base-color: rgb(236 254 255);
+  --base-background-color: #000;
+}

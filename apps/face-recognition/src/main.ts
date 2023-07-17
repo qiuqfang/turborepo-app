@@ -3,6 +3,7 @@ import App from './App.vue'
 import VConsole from 'vconsole'
 
 import './assets/main.css'
+import '@unocss/reset/sanitize/sanitize.css'
 
 import 'virtual:uno.css'
 

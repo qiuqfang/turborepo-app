@@ -10,6 +10,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@unocss/reset": "^0.53.5",
     "@vitejs/plugin-basic-ssl": "^1.0.0",
     "face-api.js": "^0.22.2",
     "vconsole": "^3.14.6",

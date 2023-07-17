@@ -65,7 +65,7 @@ const handleToggle = () => {
       <h1>{{ isFace ? "人类" : "特殊物种" }}</h1>
     </div>
 
-    <i class="i-carbon-sun dark:i-carbon-moon" @click="handleToggle"></i>
+    <i class="i-carbon-sun dark:i-carbon-moon cursor-pointer" @click="handleToggle"></i>
   </div>
 </template>
 

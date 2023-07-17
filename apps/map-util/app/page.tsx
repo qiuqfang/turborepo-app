@@ -1,9 +1,9 @@
 "use client";
 
-import { getCoordinate } from "@/util";
 import { MouseEventHandler, useRef, useState } from "react";
 
 import { FixedSizeList as List } from "react-window";
+import { getCoordinate } from "@/util";
 
 export default function Home() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);

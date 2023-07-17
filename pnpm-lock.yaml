@@ -126,7 +126,7 @@ importers:
       '@types/react-dom': ^18.2.0
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
-      react: ^17.0.2
+      react: ^18.0.0
       tsconfig: workspace:*
       typescript: ^4.5.2
     devDependencies:
@@ -134,7 +134,7 @@ importers:
       '@types/react-dom': 18.2.3
       eslint: 7.32.0
       eslint-config-custom: link:../eslint-config-custom
-      react: 17.0.2
+      react: 18.2.0
       tsconfig: link:../tsconfig
       typescript: 4.9.5
 
@@ -1865,6 +1865,7 @@ packages:
 
   /eslint-config-prettier/8.8.0_eslint@7.32.0:
     resolution: {integrity: sha512-wLbQiFre3tdGgpDv67NQKnJuTlcUVYHas3k+DZCc2U2BadthoEY4B7hLPvAxaqdyOGCzuLfii2fqGph10va7oA==}
+    hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
@@ -4042,20 +4043,11 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
-  /react/17.0.2:
-    resolution: {integrity: sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==}
-    engines: {node: '>=0.10.0'}
-    dependencies:
-      loose-envify: 1.4.0
-      object-assign: 4.1.1
-    dev: true
-
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
-    dev: false
 
   /read-cache/1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}

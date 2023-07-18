@@ -17,7 +17,7 @@ const text = computed(() => {
 provide("queryVideoRef", queryVideoRef);
 
 const onPlay = async () => {
-  isRecord.value = !recordFaceRef.value?.referenceImg?.src.includes("202306231687510240753957.jpg")
+  isRecord.value = !recordFaceRef.value?.referenceImg?.src.includes("202306231687510240753957")
   // 生成参照物
   const result = await faceapi
     .detectSingleFace(recordFaceRef.value?.referenceImg as HTMLImageElement)

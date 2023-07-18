@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, inject, type Ref } from "vue";
-import * as faceapi from "face-api.js";
 
 
 const queryVideoRef: Ref<HTMLVideoElement> | undefined = inject("queryVideoRef");
@@ -29,6 +28,7 @@ defineExpose({
 
 <template>
     <button class="btn" @click="handleRecordFace">记录人脸</button>
-    <img ref="referenceImg" class="w-40 h-40 rounded-[50%] object-fill rotate-y-180 my-4" src="../assets/202306231687510240753957.jpg" alt="">
+    <img ref="referenceImg" class="w-40 h-40 rounded-[50%] object-fill rotate-y-180 my-4"
+        src="../assets/202306231687510240753957.jpg" alt="">
     <canvas id="canvas" hidden></canvas>
 </template>

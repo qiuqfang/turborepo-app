@@ -1,17 +1,23 @@
 <script setup lang="ts">
 import * as faceapi from "face-api.js";
 import RecordFace from "./components/RecordFace.vue";
-import { onMounted, ref, provide } from "vue";
+import { onMounted, ref, provide, computed } from "vue";
 
 const recordFaceRef = ref<InstanceType<typeof RecordFace>>();
 const queryVideoRef = ref<HTMLVideoElement>();
-const isFace = ref(false);
+const isRecord = ref<boolean | undefined>(false);
+const isOneselfFace = ref(false);
 let faceMatcher: faceapi.FaceMatcher;
 let stream: MediaStream;
+
+const text = computed(() => {
+  return isRecord.value ? isOneselfFace.value ? "本人" : "非本人" : "请先记录人脸";
+});
 
 provide("queryVideoRef", queryVideoRef);
 
 const onPlay = async () => {
+  isRecord.value = !recordFaceRef.value?.referenceImg?.src.includes("202306231687510240753957.jpg")
   // 生成参照物
   const result = await faceapi
     .detectSingleFace(recordFaceRef.value?.referenceImg as HTMLImageElement)
@@ -28,13 +34,13 @@ const onPlay = async () => {
   ).withFaceLandmarks().withFaceDescriptor();
 
   let bestMatch: faceapi.FaceMatch;
-  
+
   if (singleResult) {
     bestMatch = await faceMatcher.findBestMatch(singleResult.descriptor)
     console.log(bestMatch)
-    isFace.value = bestMatch!.distance > 0.5 ? false : true;
+    isOneselfFace.value = bestMatch!.distance > 0.5 ? false : true;
   } else {
-    isFace.value = false;
+    isOneselfFace.value = false;
   }
   setTimeout(() => onPlay());
 };
@@ -76,7 +82,7 @@ const handleToggle = () => {
     <video id="face_video" ref="queryVideoRef" class=" w-40 h-40 rounded-[50%] object-fill mt-4 rotate-y-180" src=""
       autoplay></video>
     <div class=" dark:text-cyan-50">
-      <h1>{{ isFace ? "本人" : "请先记录人脸" }}</h1>
+      <h1>{{ text }}</h1>
     </div>
     <RecordFace ref="recordFaceRef" />
 

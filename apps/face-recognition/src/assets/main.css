@@ -1,5 +1,8 @@
-@import "./base.css";
+@import './base.css';
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, SFProDisplay-Regular;
+}
 #app {
   height: 100vh;
   font-weight: normal;

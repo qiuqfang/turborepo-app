@@ -9,7 +9,7 @@ export default function Home() {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [parseLngLatList, setParseLngLatList] = useState<number[][]>([]);
   const [source, setSource] = useState<"BD09" | "GCJ02">("BD09");
-  const [target, setTarget] = useState<"BD09" | "GCJ02">("GCJ02");
+  const targetRef = useRef<"BD09" | "GCJ02">("GCJ02")
 
   const [errorType, setErrorType] = useState<string[]>([]);
 
@@ -35,7 +35,7 @@ export default function Home() {
     }
     const lngLatList = value.split("\n");
 
-    const result = getCoordinate(source, target, lngLatList);
+    const result = getCoordinate(source, targetRef.current, lngLatList);
 
     setParseLngLatList(result);
   };
@@ -65,7 +65,7 @@ export default function Home() {
 
     const dataType = target.getAttribute("data-type")?.split(",");
     setSource(dataType?.[0] as "BD09" | "GCJ02");
-    setTarget(dataType?.[1] as "BD09" | "GCJ02");
+    targetRef.current = dataType?.[1] as "BD09" | "GCJ02";
     setParseLngLatList([]);
   };
 

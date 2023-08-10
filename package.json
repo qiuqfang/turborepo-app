@@ -9,15 +9,15 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
-    "@turbo/gen": "^1.10.9",
-    "browserslist": "^4.21.9",
+    "@turbo/gen": "^1.10.12",
+    "browserslist": "^4.21.10",
     "css-minimizer-webpack-plugin": "^5.0.1",
-    "eslint": "^8.45.0",
+    "eslint": "^8.46.0",
     "eslint-config-custom": "workspace:*",
     "lightningcss": "^1.21.5",
-    "prettier": "^3.0.0",
-    "turbo": "^1.10.9"
+    "prettier": "^3.0.1",
+    "turbo": "^1.10.12"
   },
-  "packageManager": "pnpm@8.6.9",
+  "packageManager": "pnpm@8.6.12",
   "name": "turborepo-app"
 }

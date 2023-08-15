@@ -39,8 +39,8 @@ importers:
   apps/face-recognition:
     dependencies:
       '@unocss/reset':
-        specifier: ^0.53.6
-        version: 0.53.6
+        specifier: ^0.55.0
+        version: 0.55.0
       '@vitejs/plugin-basic-ssl':
         specifier: ^1.0.1
         version: 1.0.1(vite@4.4.9)
@@ -1717,6 +1717,11 @@ packages:
 
   /@unocss/reset@0.53.6:
     resolution: {integrity: sha512-WtZU0Q5Y9CHzitYPJ+ZGPUssVuDnRakmHETQ2EuBJgWZhgsmTECrpb78+tnJdFVowuYYQyV0CP6a07uwkFNm6g==}
+    dev: true
+
+  /@unocss/reset@0.55.0:
+    resolution: {integrity: sha512-TzpcOCIr16IbFxQ4vrSfEV+A8k0N4mJkhl7J3SZfAxBpNDBKAWDB6VBW9iEQY5aBYDLN3wRx1LskgEoubqBCPQ==}
+    dev: false
 
   /@unocss/scope@0.53.6:
     resolution: {integrity: sha512-Wf5pRuRf85w8H4EuHRUnKOsAB4kLvScEQ0Y+MFSvnSuf0ig58Fdqda3jZ++rFCnMPF5vJIyl8Ay6y93M2R4puA==}

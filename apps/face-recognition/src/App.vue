@@ -2,6 +2,7 @@
 import * as faceapi from "face-api.js";
 import RecordFace from "./components/RecordFace.vue";
 import { onMounted, ref, provide, computed } from "vue";
+import { handleToggle } from "@/utils"
 
 const recordFaceRef = ref<InstanceType<typeof RecordFace>>();
 const queryVideoRef = ref<HTMLVideoElement>();
@@ -64,17 +65,6 @@ onMounted(async () => {
   queryVideoRef.value!.onloadedmetadata = onPlay;
 
 });
-
-const handleToggle = () => {
-  const htmlEl = document.documentElement
-
-  htmlEl.classList.toggle("dark");
-  if (htmlEl.classList.value.includes("dark")) {
-    localStorage.theme = "dark";
-  } else {
-    localStorage.theme = "light";
-  }
-};
 </script>
 
 <template>

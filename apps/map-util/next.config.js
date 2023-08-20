@@ -4,6 +4,7 @@ const browserslist = require("browserslist");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
   webpack: (config) => {
     config.optimization.minimize = true;
     config.optimization.minimizer = [
